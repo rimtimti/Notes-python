@@ -37,4 +37,4 @@ class Note:
         return note.id + ';' + note.title + ';' + note.body + ';' + note.date
 
     def map_note(note):
-        return 'ID: ' + note.id + '\n' + 'Название: ' + note.title + '\n' + 'Описание: ' + note.body + '\n' + 'Дата публикации: ' + note.date
+        return '\nID: ' + note.id + '\n' + 'Название: ' + note.title + '\n' + 'Описание: ' + note.body + '\n' + 'Дата публикации: ' + note.date
