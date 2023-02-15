@@ -1,4 +1,4 @@
-import function
+import function as f
 import ui
 
 
@@ -8,17 +8,17 @@ def run():
         ui.menu()
         input_from_user = input().strip()
         if input_from_user == '1':
-            function.show()
+            f.show()
         if input_from_user == '2':
-            function.add()
+            f.add()
         if input_from_user == '3':
-            function.delete()
+            f.edit_del('del')
         if input_from_user == '4':
-            function.edit()
+            f.edit_del('edit')
         if input_from_user == '5':
-            function.show_date()
+            f.show_date()
         if input_from_user == '6':
-            function.show_id()
+            f.show_id()
         if input_from_user == '7':
             ui.goodbuy()
             break

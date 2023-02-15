@@ -57,34 +57,23 @@ def show_id():
         print("Заметки не найдено...")
 
 
-def delete():
+def edit_del(text):
     show()
     id = input("Введите id заметки: ")
-    logic = True
     array = file_operation.read_file()
+    logic = True
     for notes in array:
         if id == Note.Note.get_id(notes):
             logic = False
-            array.remove(notes)
-            print("Заметка удалена...")
-            file_operation.write_file(array, 'a')
-    if logic == True:
-        print('Такой заметки нет. Возможно вы ввели неверный id')
-
-
-def edit():
-    show()
-    input_from_user = input("Введите id заметки: ")
-    array = file_operation.read_file()
-    logic = True
-    for notes in array:
-        if input_from_user == Note.Note.get_id(notes):
-            note = ui.create_note(number)
-            Note.Note.set_title(notes, note.get_title())
-            Note.Note.set_body(notes, note.get_body())
-            Note.Note.set_date(notes)
-            print('Заметка изменена')
-            logic = False
+            if text == 'edit':
+                note = ui.create_note(number)
+                Note.Note.set_title(notes, note.get_title())
+                Note.Note.set_body(notes, note.get_body())
+                Note.Note.set_date(notes)
+                print('Заметка изменена')
+            if text == 'del':
+                array.remove(notes)
+                print("Заметка удалена...")
     if logic == True:
         print('Такой заметки нет, возможно, вы ввели неверный id')
     file_operation.write_file(array, 'a')

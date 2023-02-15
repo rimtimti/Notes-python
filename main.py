@@ -1,3 +1,3 @@
-import user_controller
+import controller as c
 
-user_controller.run()
+c.run()
